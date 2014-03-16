@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<style>
+			<title>devine</title>
+		</style>
+	</head>
+	<body>
+		<h1>devine</h1>
+			
+		</div>
+		<script>
+			var socket = new WebSocket("ws://localhost:7999");
+			if(socket){
+				var methods = {
+					listTemplates: (function(){
+						var templateBtn = function(templateName){
+							var btn = document.createElement('button');
+							btn.innerHTML = templateName;
+							btn.onclick = function(){
+								socket.json({method: 'loadTemplate', templateName: templateName});
+							}
+							document.body.appendChild(btn);
+						};
+						return function(json){
+							for(var templateName in json.templates){
+								templateBtn(templateName);						
+							}
+						};
+					}())
+				}
+				socket.onmessage = function(e){
+					var json = JSON.parse(e.data);
+					console.log('devine got ' + e.data);
+					if(methods[json.method]){
+						methods[json.method](json);
+					}
+				}	
+				socket.json = function(object){
+					socket.send(JSON.stringify(object))
+				};
+				socket.onopen = function(){  
+					console.log("devine socket connected");  
+					socket.json({method: 'connect', branch: 'devine'});
+				}
+			}
+			else alert('ws fail');
+		</script>
+	</body>
+</html>

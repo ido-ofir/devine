@@ -1,0 +1,19 @@
+Windows Registry Editor Version 5.00
+[HKEY_CLASSES_ROOT\Directory\Shell]
+@="none"
+
+[HKEY_CLASSES_ROOT\Directory\shell\root]
+"Icon"="C:\\Devine\\favicon.ico"
+"MUIVerb"="Devine"
+"Position"="top" 
+
+[HKEY_CLASSES_ROOT\Directory\shell\root\command] 
+@="cmd.exe /s /c \"cd %1&&devine\""
+
+[HKEY_CLASSES_ROOT\Directory\Background\shell\root]
+"Icon"="C:\\Devine\\favicon.ico"
+"MUIVerb"="Devine"
+"Position"="top" 
+
+[HKEY_CLASSES_ROOT\Directory\Background\shell\root\command]
+@="cmd.exe /s /c devine" 

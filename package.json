@@ -1,0 +1,25 @@
+{
+  "name": "devine",
+  "version": "0.0.0",
+  "description": "leverage chrome devTools for web production",
+  "main": "root.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "bin": {
+    "devine": "devine"
+  },
+  "dependencies": {
+    "ws": "~0.4.31"
+  },
+  "author": {
+    "name": "ido-ofir"
+  },
+  "license": "ISC",
+  "readme": "ERROR: No README data found!",
+  "_id": "devine@0.0.0",
+  "dist": {
+    "shasum": "eae6544a1a8c13f2c13b1ff9298e9635efc2c624"
+  },
+  "_from": "devine@"
+}

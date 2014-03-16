@@ -1,0 +1,41 @@
+{
+  "manifest_version": 2,
+
+  "name": "devtools",
+  "description": "devtools extention",
+  "version": "1.0",
+  "background": {
+	"scripts": ["background.js"]
+  },
+  "devtools_page": "devtools.html",
+    "commands": {
+		"add": {
+		  "suggested_key": {
+			"default": "Alt+Shift+A"
+		  },
+		  "description": "add element"
+		},
+		"wrap": {
+		  "suggested_key": {
+			"default": "Alt+Shift+W"
+		  },
+		  "description": "wrap an element with.."
+		},
+		"save": {
+		  "suggested_key": {
+			"default": "Alt+Shift+S"
+		  },
+		  "description": "save files"
+		},
+		"duplicate": {
+		  "suggested_key": {
+			"default": "Alt+Shift+D"
+		  },
+		  "description": "duplicate element"
+		}
+  },
+  "browser_action": {
+    "default_icon": "icon.png",
+    "default_popup": "panel.html"
+  }
+}

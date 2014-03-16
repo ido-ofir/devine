@@ -1,0 +1,9 @@
+#!/usr/bin/env node
+
+"use strict";
+console.log('devine');
+var path = require('path');
+var fs = require('fs');
+var realPath = fs.realpathSync(__filename);
+var dir = path.dirname(realPath);
+require(dir + '/root.js').root(dir);
